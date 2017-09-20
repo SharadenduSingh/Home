@@ -20,9 +20,7 @@ namespace lightswitch
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .UseKestrel(options=>{
-                options.Listen(IPAddress.Loopback,80);
-            })
+            .UseUrls("http://*:80")
             .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<Startup>()
                 .Build();
