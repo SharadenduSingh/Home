@@ -16,12 +16,22 @@ namespace lightswitch
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
+            // var config = new ConfigurationBuilder()
+            // .SetBasePath(Directory.GetCurrentDirectory())
+            // .Build();
+
+            // var host = new WebHostBuilder()
+            // .UseKestrel()
+            // //.UseUrls("http://*:80")
+            // .UseContentRoot(Directory.GetCurrentDirectory())
+            // .UseStartup<Startup>()
+            // .Build();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .UseUrls("http://*:80")
-            .UseContentRoot(Directory.GetCurrentDirectory())
+            // .UseUrls("http://*:80")
+            // .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<Startup>()
                 .Build();
     }
