@@ -30,8 +30,6 @@ namespace lightswitch
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            // .UseUrls("http://*:80")
-            // .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<Startup>()
                 .Build();
     }
